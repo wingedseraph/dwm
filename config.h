@@ -69,7 +69,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 
-static const char *dmenucmd[] = {"dmenu_run", "-i",   "-l",   "20",   "-fn",
+static const char *dmenucmd[] = {"dmenu_run_history", "-i",   "-l",   "20",   "-fn",
                                  dmenufont,   "-nb",  col_bg, "-nf",  col_fg,
                                  "-sb",       col_fg, "-sf",  col_bg, NULL};
 static const char *termcmd[] = {"alacritty", NULL};
@@ -122,7 +122,7 @@ static const Button buttons[] = {
     {ClkLtSymbol, 0, Button1, setlayout, {0}},
     {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[2]}},
     {ClkWinTitle, 0, Button2, zoom, {0}},
-    {ClkStatusText, 0, Button1, spawn, {.v = termcmd}},
+    /* {ClkStatusText, 0, Button1, spawn, {.v = termcmd}}, */
     {ClkClientWin, ALTKEY, Button1, movemouse, {0}},
     {ClkWinTitle, 0, Button1, togglewin, {0}},
     {ClkClientWin, MODKEY, Button2, togglefloating, {0}},

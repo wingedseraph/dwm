@@ -1334,7 +1334,7 @@ movemouse(const Arg *arg)
 
 				if (cc) {
 					Client *cl1, *cl2, ocl1;
-					
+
 					if (!selmon->lt[selmon->sellt]->arrange) return;
 
 					cl1 = c;
@@ -1346,19 +1346,19 @@ movemouse(const Arg *arg)
 					cl1->y = cl2->y;
 					cl1->w = cl2->w;
 					cl1->h = cl2->h;
-					
+
 					cl2->win = ocl1.win;
 					strcpy(cl2->name, ocl1.name);
 					cl2->x = ocl1.x;
 					cl2->y = ocl1.y;
 					cl2->w = ocl1.w;
 					cl2->h = ocl1.h;
-					
+
 					selmon->sel = cl2;
 
 					c = cc;
 					focus(c);
-					
+
 					arrange(cl1->mon);
 				}
 			}
@@ -1993,7 +1993,7 @@ togglewin(const Arg *arg)
 	Client *c = (Client*)arg->v;
 
 	if (c == selmon->sel) {
-		hidewin(c);
+		// hidewin(c);
 		focus(NULL);
 		arrange(c->mon);
 	} else {
