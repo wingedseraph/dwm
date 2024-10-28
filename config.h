@@ -7,15 +7,22 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 /* static const char *fonts[] = {"Monocraft:size=26"}; */
 
-static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold",
-                              "Font Awesome 6 Free Solid:size=13"};
-static const char dmenufont[] = "JetBrainsMono NF:size=40:style=Bold";
+/* static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold", */
+/*                               "Font Awesome 6 Free Solid:size=13"}; */
+/* static const char dmenufont[] = "JetBrainsMono NF:size=40:style=Bold"; */
 /* static const char dmenufont[] = "Monocraft:size=46"; */
+static const char *fonts[]          = { "Fixedsys Excelsior:size=33:antialias=true:autohint=false" };
+static const char dmenufont[]       = "Fixedsys Excelsior:size=33:antialias=true:autohint=false";
+static const char col_gray1[]       = "#d3d7cf";
+static const char col_gray2[]       = "#d3d7cf";
+static const char col_gray3[]       = "#000000";
+static const char col_gray4[]       = "#ffffff";
+static const char col_cyan[]        = "#0000aa";
 
-static const char col_bg[] = "#181818";      // Dark background for night mode
-static const char col_fg[] = "#d4b89e";      // Soft, warm beige for text to reduce glare
-static const char col_border[] = "#d4b89e";  // Border in a warm tone to match text color
-static const char col_sel[] = "#b99c85";     // Muted beige-gray for selected elements
+/* static const char col_bg[] = "#181818";      // Dark background for night mode */
+/* static const char col_fg[] = "#d4b89e";      // Soft, warm beige for text to reduce glare */
+/* static const char col_border[] = "#d4b89e";  // Border in a warm tone to match text color */
+/* static const char col_sel[] = "#b99c85";     // Muted beige-gray for selected elements */
 
 // static const char col_bg[] = "#1a1a1a";      // Deep, soft black background
 // static const char col_fg[] = "#e0e0e0";      // Light gray text for legibility
@@ -25,8 +32,10 @@ static const char col_sel[] = "#b99c85";     // Muted beige-gray for selected el
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {col_fg, col_bg, col_border},
-    [SchemeSel] = {col_bg, col_sel, col_sel},
+    /* [SchemeNorm] = {col_fg, col_bg, col_border}, */
+    /* [SchemeSel] = {col_bg, col_sel, col_sel}, */
+    [SchemeNorm] = { col_gray3, col_gray1, col_cyan },
+    [SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
 };
 
 /* tagging */
@@ -77,8 +86,8 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 
 static const char *dmenucmd[] = {"dmenu_run_history", "-i",   "-l",   "20",   "-fn",
-                                 dmenufont,   "-nb",  col_bg, "-nf",  col_fg,
-                                 "-sb",       col_fg, "-sf",  col_bg, NULL};
+                                 dmenufont,   "-nb",  col_gray4, "-nf",  col_gray3,
+                                 "-sb",       col_gray3, "-sf",  col_gray4, NULL};
 static const char *termcmd[] = {"alacritty", NULL};
 
 static const char *screenshot[] = {
