@@ -11,10 +11,17 @@ static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold",
                               "Font Awesome 6 Free Solid:size=13"};
 static const char dmenufont[] = "JetBrainsMono NF:size=40:style=Bold";
 /* static const char dmenufont[] = "Monocraft:size=46"; */
-static const char col_bg[] = "#181818";
-static const char col_fg[] = "#feedcd";
-static const char col_border[] = "#feedcd";
-static const char col_sel[] = "#feedcd";
+
+static const char col_bg[] = "#181818";      // Dark background for night mode
+static const char col_fg[] = "#d4b89e";      // Soft, warm beige for text to reduce glare
+static const char col_border[] = "#d4b89e";  // Border in a warm tone to match text color
+static const char col_sel[] = "#b99c85";     // Muted beige-gray for selected elements
+
+// static const char col_bg[] = "#1a1a1a";      // Deep, soft black background
+// static const char col_fg[] = "#e0e0e0";      // Light gray text for legibility
+// static const char col_border[] = "#2d2d2d";  // Dark gray border
+// static const char col_sel[] = "#474747";     // Muted gray for selected elements
+
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
