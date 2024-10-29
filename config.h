@@ -33,7 +33,7 @@ static const char col_sel[] = "#b99c85";     // Muted beige-gray for selected el
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_fg, col_bg, col_border},
-    [SchemeSel] = {col_bg, col_sel, col_sel},
+    [SchemeSel] = {col_fg, col_bg, col_sel},
     /* [SchemeNorm] = { col_gray3, col_gray1, col_cyan }, */
     /* [SchemeSel]  = { col_gray4, col_cyan,  col_gray2  }, */
 };
