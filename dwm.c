@@ -2027,7 +2027,7 @@ togglewin(const Arg *arg)
 	Client *c = (Client*)arg->v;
 
 	if (c == selmon->sel) {
-		hidewin(c);
+		// hidewin(c);
 		focus(NULL);
 		arrange(c->mon);
 	} else {
