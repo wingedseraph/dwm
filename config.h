@@ -7,8 +7,7 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 /* static const char *fonts[] = {"Monocraft:size=26"}; */
 
-static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold",
-                              "Font Awesome 6 Free Solid:size=13"};
+static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold"};
 static const char dmenufont[] = "JetBrainsMono NF:size=40:style=Bold";
 /* static const char dmenufont[] = "Monocraft:size=46"; */
 
@@ -114,11 +113,14 @@ static const Key keys[] = {
     {MODKEY / ShiftMask, XK_Return, zoom, {0}},
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY, XK_f, togglefullscr, {0}},
-    {MODKEY | ShiftMask, XK_q, killclient, {0}},
+    {ALTKEY, XK_F4, killclient, {0}},
     {MODKEY, XK_e, setlayout, {.v = &layouts[0]}},
     // {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
     {MODKEY, XK_w, setlayout, {.v = &layouts[2]}},
-    {MODKEY, XK_space, setlayout, {0}},
+
+    /* {MODKEY, XK_space, setlayout, {0}}, */
+    {MODKEY, XK_space, spawn, {.v = dmenucmd}},
+
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
     {MODKEY | ShiftMask, XK_0, tag, {.ui = ~0}},
