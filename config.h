@@ -7,8 +7,8 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 /* static const char *fonts[] = {"Monocraft:size=26"}; */
 
-static const char *fonts[] = {"JetBrainsMono NF:size=30:style=Bold"};
-static const char dmenufont[] = "JetBrainsMono NF:size=40:style=Bold";
+static const char *fonts[] = {"JetBrainsMono NF:size=20:style=Bold"};
+static const char dmenufont[] = "JetBrainsMono NF:size=30:style=Bold";
 /* static const char dmenufont[] = "Monocraft:size=46"; */
 
 /* static const char *fonts[]          = { "Fixedsys Excelsior:size=33:antialias=true:autohint=false" }; */
@@ -87,6 +87,15 @@ static char dmenumon[2] =
 /* static const char *dmenucmd[] = {"dmenu_run_history", "-i",   "-l",   "20",   "-fn", */
 /*                                  dmenufont,   "-nb",  col_gray3, "-nf",  col_gray4, */
 /*                                  "-sb",       col_gray4, "-sf",  col_gray3, NULL}; */
+/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+#define SHCMD(cmd)                                                             \
+  {                                                                            \
+    .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
+  }
+#define CMD(cmd)                                                               \
+  {                                                                            \
+    .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
+  }
 
 static const char *dmenucmd[] = {"dmenu_run_history", "-i",   "-l",   "20",   "-fn",
                                  dmenufont,   "-nb",  col_bg, "-nf",  col_fg,
@@ -100,6 +109,8 @@ static const char *pickcolor[] = {"xcolor", "--selection", "clipboard", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
+    {MODKEY, XK_z, spawn, CMD("neovide")},
+    {MODKEY, XK_x, spawn, CMD("firefox")},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_b, togglebar, {0}},
